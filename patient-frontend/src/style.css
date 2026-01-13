@@ -1,0 +1,215 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f6fb;
+}
+
+/* ================= HEADER ================= */
+.dashboard-header {
+  background: linear-gradient(to right, #2b6cb0, #3182ce);
+  color: white;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info img {
+  border-radius: 50%;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.dashboard-actions {
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.dashboard-actions button {
+  border: none;
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.dashboard-actions button:hover {
+  color: #2b6cb0;
+}
+
+/* ================= LAYOUT ================= */
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* ================= CARDS ================= */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ================= PROFILE ================= */
+.profile-card p {
+  margin: 8px 0;
+}
+
+/* ================= APPOINTMENTS ================= */
+.appointment-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+/* ❌ REMOVE THE UNWANTED | LINE */
+.appointment-row p {
+  margin: 4px 0;
+}
+
+.appointment-row p:contains("|") {
+  display: none;
+}
+
+/* ================= STATUS BADGES ================= */
+.badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.green {
+  background: #38a169;
+}
+
+.yellow {
+  background: #d69e2e;
+}
+
+/* ================= BUTTONS ================= */
+.primary-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  background: #2b6cb0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.primary-btn:hover {
+  background: #1e4f8f;
+}
+
+/* ================= LOGIN PAGE ================= */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f9;
+}
+
+.login-card {
+  width: 360px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-card label {
+  font-weight: 500;
+  margin-top: 10px;
+  display: block;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  background: #1e40af;
+}
+/* FORCE REMOVE SINGLE '|' LINE */
+.appointment-row p {
+  line-height: 1.4;
+}
+
+.appointment-row p:empty {
+  display: none;
+}
+
+/* Hide p tag that contains only | */
+.appointment-row p {
+  position: relative;
+}
+
+.appointment-row p::after {
+  content: "";
+}
+
+.appointment-row p {
+  font-size: 14px;
+}
+
+.appointment-row p {
+  white-space: pre;
+}
+
+/* FINAL FIX */
+.appointment-row p {
+  font-size: 14px;
+}
+
+.appointment-row p:has(> :not(:empty)) {
+  font-size: 14px;
+}
+
+/* 👇 THIS IS THE MAIN FIX */
+.appointment-row p {
+  font-size: 14px;
+}
+
+.appointment-row p:nth-child(3) {
+  display: none;
+}
