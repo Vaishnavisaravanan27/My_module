@@ -1,0 +1,43 @@
+DROP DATABASE patient_db;
+CREATE DATABASE patient_db;
+USE patient_db;
+
+CREATE TABLE patient (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    name VARCHAR(100),
+    age INT,
+    gender VARCHAR(10),
+    phone VARCHAR(15)
+);
+
+CREATE TABLE appointment (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    patient_id BIGINT NOT NULL,
+    doctor_name VARCHAR(100),
+    appointment_date DATETIME,
+    status VARCHAR(30),
+    FOREIGN KEY (patient_id) REFERENCES patient(id)
+);
+
+CREATE TABLE prescription (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    patient_id BIGINT NOT NULL,
+    medicine VARCHAR(200),
+    dosage VARCHAR(100),
+    FOREIGN KEY (patient_id) REFERENCES patient(id)
+);
+
+CREATE TABLE bill (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    patient_id BIGINT NOT NULL,
+    amount DECIMAL(10,2),
+    status VARCHAR(30),
+    FOREIGN KEY (patient_id) REFERENCES patient(id)
+);
+INSERT INTO patient (username, password, name, age, gender, phone)
+VALUES ('vaishu', '1234', 'Vaishnavi', 21, 'Female', '9876543210');
+SELECT * FROM patient;
+
+SHOW TABLES;
